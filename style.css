@@ -1,0 +1,930 @@
+/* Colors */
+:root {
+
+    /* Dark-Mode */
+    --nav-color: #1c2a31;
+    --bg-color: #131C21;
+    --text-color: #6F7376;
+    --msg-color: #056162;
+    --nav-green: #20977a;
+    --mic-green: #35CD96;
+    --name-color: #fff;
+    --read-tick-color: #34B7F1;
+    --room-dark : #396CD3;
+    --room-light: #4079EC;
+    --contact-dark: #0795DC;
+    --contact-light: #0EABF4;
+    --document-dark: #5157AE;
+    --document-light: #5F66CD;
+    --camera-dark: #D3396D;
+    --camera-light: #EC407A;
+    --photos-dark: #AC44CF;
+    --photos-light: #BF59CF;
+
+    /* Light-Mode */
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+}
+
+.content {
+    padding: 16px;
+    color: #f1f1f1;
+}
+  
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+.sticky + .content {
+    padding-top: 102px;
+  }
+  
+nav {
+    color: var(--text-color);
+    font-size: 4vh;
+    font-weight: 600;
+    background-color: var(--nav-color);
+    box-shadow: 0 7px rgb(225 225 225 / 0%);
+}
+
+.nav__hidden {
+    display: none;
+}
+.nav__search__main {
+    margin-top: -0.9rem;
+}
+
+.nav__primary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__primary__search__more {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__search__btn {
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 7px 7px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.nav__search__btn:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__modal__btn {
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 5px 16px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.nav__modal__btn:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__secondary {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--nav-color);
+}
+
+.nav__secondary__camera {
+    height: 100%;
+}
+
+.nav__secondary__camera:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__secondary__chat {
+    height: 100%;
+}
+
+.nav__secondary__chat:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__secondary__status {
+    height: 100%;
+}
+
+.nav__secondary__status:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__secondary__calls {
+    height: 100%;
+}
+
+.nav__secondary__calls:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.tab-content {
+    display: none;
+    color: var(--name-color);
+  }
+
+#tab-2 {
+    display: block;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 82px;
+    top: -48px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: var(--nav-color);
+    margin: 15% auto; /* 15% from the top and centered */
+    font-size: 1.1rem;
+    color: var(--name-color);
+    font-weight: 300;
+    box-shadow: 3px 3px 5px 6px rgba( 25, 25, 25, 0.2);
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+
+  .modal-content > p {
+      padding: 10px 15px;
+  }
+   
+.modal-content > p:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.active {
+    color: var(--mic-green);
+    border-bottom: 3px solid var(--nav-green);
+} 
+
+.nav__serach__main {
+    background-color: var(--nav-color);
+    display: flex;
+    transition: 3s ease-in-out 1s;
+}
+
+.nav__search__primary {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem 0.4rem 0 0.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:hover {
+    text-decoration: none;
+}
+.nav__search__back {
+    padding: 2px;
+    font-size: 25px;
+}
+
+.nav__serach__bar > input {
+    width: 150%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    outline: none;
+    caret-color: var(--mic-green);
+}
+
+.nav__search__secondary__row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start; 
+    align-content: start;
+    color: var(--name-color);
+}
+
+.nav__back__btn {
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 7px 9px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.nav__back__btn:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.nav__search__secondary__photos {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 1em -0.1em 1em 0.6em;
+    padding: 0.3em 0.8em 0.4em 0.8em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__photos > i {
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+.nav__search__secondary__photos:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.nav__search__secondary__videos {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 1em -0.4em 1em 0.6em;
+    padding: 0.3em 0.8em 0.4em 0.8em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__videos > i {
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+.nav__search__secondary__videos:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.nav__search__secondary__links {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 1em 0em 1em 0.9em;
+    padding: 0.3em 0.8em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__links > i {
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+.nav__search__secondary__links:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.nav__search__secondary__gifs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 15px;
+    font-weight: 400;
+    margin: -0.4em 0em 1em 0.6em;
+    padding: 0.4em 1em 0em 1em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__gifs > img {
+    margin: -8px -4px 0 -5px;
+    width: 2rem;
+    height: 2rem;
+}
+
+.nav__search__secondary__gifs:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.nav__search__secondary__audio {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 15px;   
+    font-weight: 400;
+    margin: -0.4em 0em 1em 0.4em;
+    padding: 0.3em 1em 0em 1em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__audio > i {
+    font-size: 1rem;
+    margin-top: 3px;
+}
+
+.nav__search__secondary__audio:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.nav__search__secondary__documents {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 15px;
+    font-weight: 400; 
+    margin: -0.4em 0em 1em 0.4em;
+    padding: 0.4em 1em 0em 1em;
+    border-radius: 25px;
+    background-color: #263b46;
+}
+
+.nav__search__secondary__documents > i {
+    font-size: 0.8rem;
+    margin-top: 3px;
+}
+
+.nav__search__secondary__documents:hover {
+    animation: slide1 0.6s ease-in-out;
+}
+
+.profile__card {
+    display: flex;
+    gap: 1rem;
+    color: #6F7376;
+}
+
+.profile__card:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+.profile__picture {
+    height: 8vh;
+    width: 9vh;
+}
+
+.profile__picture > img {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 50%;
+}
+
+.profile__details {
+    display: flex;
+    flex-flow: column;
+}
+.profile__title {
+    display: flex;
+    gap: 5.3rem;  
+    margin-top: 16px;
+}
+
+.size {
+    gap: 4.3rem;
+}
+
+.profile__name {
+    color: var(--name-color);
+    font-size: 1.3rem;
+    margin-left: -16px;
+}
+
+.profile__time {
+    font-size: 14px;
+}
+
+.profile__subtitle {
+    margin-left: -18px;
+}
+
+/* Camera Styling */
+
+.camera__container {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    justify-content: center;
+    align-items: auto;
+    align-content: space-between;
+}
+
+.camera__pic {
+    flex: 0 0 auto;
+    margin: 1.5px;
+}
+
+.camera__pic > img {
+    width: 4.25rem;
+}
+
+.camera__icons {
+    display: flex;
+    justify-content: space-around;   
+}
+
+.camera__up {
+    padding: 4px;
+    margin: 17.4rem 0 0 10rem;
+}
+
+.camera__tap > img {
+    width: 6rem;
+}
+
+.camera__flash > img {
+    width: 1.9rem;
+    margin: 2rem 0 0 2rem;
+}
+
+.camera__button > img {
+    width: 1.9rem;
+    margin: 2rem 2rem 0 0;
+}
+
+.camera__instruction {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    background-color: black;
+}
+
+/* Status Styling */
+.status__image > img {
+    width: 38%;
+    border-radius: 50%;
+}
+
+.status__image {
+    padding: 14px;
+}
+
+.status__container {
+    display: flex;
+}
+
+.status__container:hover {
+    animation: slide 0.2s ease-in-out;
+}
+
+
+.status__add {
+    position: absolute;
+    font-size: 1.1rem;
+    background-color: var(--nav-green);
+    border: 2px solid var(--bg-color);
+    border-radius: 50%;
+    width: 7%;
+    height: 4%;
+    padding: 4.5px;
+    margin: -38px 0 0 45px;
+}
+
+.status__text__container {
+    margin: 16px 0 0 -88px;
+}
+
+.status__title {
+    font-size: 1.4rem;
+}
+
+.status__subtitle {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Call Styling */
+.call_profile__time {
+    color: #20977a;
+    font-size: 1.6rem;
+}
+
+.space {
+    margin-top: -8px;
+}
+
+.sp1 {
+    margin-left: 20px;
+}
+
+.fa-phone-alt {
+    padding-top: 12px;
+}
+
+.profile__subtitle > img {
+    width: 15px;
+    padding-right: 3px;
+}
+
+/* Animation Slide white */
+@-webkit-keyframes slide {
+    0% {
+        background-color: rgba( 225, 225, 225, 0.2);
+    }
+    100% {
+        background-color: rgba( 225, 225, 225, 0.4);
+    }
+}
+
+/* Animation Slide1 black */
+@-webkit-keyframes slide1 {
+    0% {
+        background-color: rgba(37, 25, 25, 0.2);
+        z-index: 2;
+    }
+    100% {
+        background-color: rgba(37, 25, 25, 0.2);
+        z-index: 2;
+    }
+}
+
+/* for mobile portrait / very small devices */
+@media (min-width: 280px) {
+    .nav__primary {
+        margin: 0 1.1rem 0.8rem 1.1rem;
+        padding: 13px 0 4px 0;
+    }
+    .nav__secondary {
+        font-size: 1.2rem;
+    }
+    .nav__secondary__camera {
+        height: 100%;
+        padding: 23px;
+    }
+    .nav__secondary__chat {
+        height: 100%;
+        padding: 20px;
+    }
+    .nav__secondary__status {
+        height: 100%;
+        padding: 20px;
+    }
+    
+    .nav__secondary__calls {
+        height: 100%;
+        padding: 20px;
+    }
+    .profile__picture {
+        margin: 1rem;
+    }
+}
+
+/* for mobile portrait / small devices */
+@media (min-width: 350px) {
+    .status__add {
+        margin: -36px 0 0 52px;
+        padding: 4.1px;
+    }
+    .status__image > img {
+        width: 23%;
+    }
+    .status__text__container {
+        margin: 21px 0 0 -226px;
+    }
+}
+
+/* for mobile portrait / small devices */
+@media (min-width: 411px) {
+    .camera__pic > img {
+        width: 4.9rem;
+    }
+    .camera__up {
+        margin: 21.4rem 0 0 12rem;
+    }
+    .profile__title {
+        gap: 7.3rem;
+    }
+    .status__add {
+      padding: 4.8px;
+    }
+    .modal {
+        left: 96px;
+        top: -52px;
+    }
+}
+
+/* for mobile portrait / small devices */
+@media (min-height: 823px) {
+    .camera__up {
+        margin: 27.4rem 0 0 12rem;
+    }
+}
+/* for mobile landscape / small devices */
+@media only screen and (min-width: 768px) {
+    .camera__pic > img {
+        width: 8.99rem;
+    }
+    .camera__pic {
+        margin: 4.5px;
+    }
+    .camera__tap > img {
+        width: 8rem;
+    }
+    .camera__flash > img {
+        width: 2.9rem;
+        margin: 2.3rem 0 0 2rem;
+    }
+    .camera__button > img {
+        width: 2.9rem;
+        margin: 2.3rem 2rem 0 0;
+    }
+    .camera__instruction {
+        font-size: 2.1rem;
+        padding: 1.5rem;
+    }
+    .camera__up {
+        margin: 25.4rem 0 0 22rem;
+        font-size: 1.6rem;
+    }
+    .nav__primary {
+        margin: 0 3.1rem 1.8rem 2.1rem;
+        padding: 2rem 0 4px 0;
+    }
+    .nav__secondary {
+        font-size: 2.2rem;
+    }
+    .nav__secondary__calls {
+        padding: 20px 30px;
+    }
+    .nav__search__btn {
+        font-size: 35px;
+    }
+    .nav__modal__btn {
+        font-size: 42px;
+    }
+    .modal-content {
+        font-size: 1.89rem;
+        width: 38%;
+    }
+    .modal-content > p {
+        padding: 14px 35px;
+    }
+    .modal {
+        left: 227px;
+        top: -92px;
+    }
+    .nav__serach__bar > input {
+        font-size: 2.2rem;
+    }
+    .nav__back__btn {
+        font-size: 38px;
+    }
+    .nav__search__secondary__photos {
+        font-size: 26px;
+    }
+    .nav__search__secondary__photos > i {
+        font-size: 1.3rem;
+        margin-top: 7px;
+    }
+    .nav__search__secondary__videos {
+        font-size: 24px;
+    }
+    .nav__search__secondary__videos > i {
+        font-size: 1.3rem;
+        margin-top: 8px;
+    }
+    .nav__search__secondary__links {
+        font-size: 25px;
+    }
+    .nav__search__secondary__links > i {
+        font-size: 1.3rem;
+        margin-top: 5px;
+    }
+    .nav__search__secondary__gifs {
+        font-size: 25px;
+    }
+    .nav__search__secondary__gifs > img {
+        margin: -9px -4px 0 -9px;
+        width: 3rem;
+        height: 3rem;
+    }
+    .nav__search__secondary__audio {
+        font-size: 24px;
+    }
+    .nav__search__secondary__audio > i {
+        font-size: 1.3rem;
+        margin-top: 4px;
+    }
+    .nav__search__secondary__documents {
+        font-size: 24px;
+    }
+    .nav__search__secondary__documents > i {
+        font-size: 1.3rem;
+        margin-top: 3px;
+    }
+    .profile__name {
+        font-size: 2.3rem;
+        margin-left: -8px;
+    }
+    .profile__subtitle > img {
+        width: 26px;
+        margin: 10px;
+    }
+    .subtitle {
+        font-size: 1.7rem;
+        margin-top: 3px;
+        position: absolute;
+    }
+    .call_profile__time {
+        font-size: 2.6rem;
+    }
+    .profile__title {
+        gap: 19.3rem;
+    }
+    .status__image > img {
+        width: 33%;
+    }
+    .status__image {
+        padding: 23px;
+    }
+    .status__add {
+        margin: -54px 0 0 71px;
+        font-size: 2rem;
+        width: 6%;
+        padding: 2px 2px 2px 7px;
+    }
+    .status__title {
+        font-size: 2.4rem;
+    }
+    .status__subtitle {
+        font-size: 2.1rem;
+    }
+    .status__text__container {
+        margin: 21px 0 0 -201px;
+    }
+    .profile__subtitle {
+        margin-left: -12px;
+        font-size: 1.6rem;
+    }
+    .profile__time {
+        font-size: 26px;
+    }
+}
+
+/* for large devices */
+@media (min-width: 1024px) {
+    .nav__primary {
+        margin: 0 2rem 2rem 2rem;
+        padding: 20px 10px 10px 10px;
+    }
+    .nav__primary__search__more {
+        gap: 2rem;
+    }
+    .nav__secondary {
+        margin: 2rem;
+        padding-bottom: 0px;
+        font-size: 2.7rem;
+    }
+    .nav__search__btn {
+        font-size: 41px;
+    }
+    .nav__modal__btn {
+        font-size: 46px;
+    }
+    .modal-content {
+        font-size: 2.2rem;
+        width: 32%;
+    }
+    .modal {
+        left: 21rem;
+        top: -129px;
+    }
+    .nav__serach__bar > input {
+        font-size: 2.2rem;
+    }
+    .nav__back__btn {
+        font-size: 38px;
+    }
+    .nav__search__secondary__photos {
+        font-size: 32px;
+        border-radius: 50px;
+    }
+    .nav__search__secondary__photos > i {
+        font-size: 1.7rem;
+        margin-top: 8px;
+    }
+
+    .nav__search__secondary__videos {
+        font-size: 31px;
+        border-radius: 50px;
+    }
+
+    .nav__search__secondary__videos > i {
+        font-size: 1.7rem;
+        margin-top: 8px;
+    }
+
+    .nav__search__secondary__links {
+        font-size: 31px;
+        border-radius: 50px;
+    }
+    .nav__search__secondary__links > i {
+        font-size: 1.7rem;
+        margin-top: 9px;
+    }
+
+    .nav__search__secondary__gifs {
+        font-size: 31px;
+        border-radius: 50px;
+    }
+
+    .nav__search__secondary__gifs > img {
+        margin: -4px -4px 9px -9px;
+        width: 3rem;
+        height: 3rem;
+    }
+    .nav__search__secondary__audio {
+        font-size: 31px;
+        border-radius: 50px;
+    }
+
+    .nav__search__secondary__audio > i {
+        font-size: 1.7rem;
+        margin-top: 8px;
+    }
+
+    .nav__search__secondary__documents {
+        font-size: 31px;
+        border-radius: 50px;
+    }
+
+    .nav__search__secondary__documents > i {
+        font-size: 1.7rem;
+        margin-top: 7px;
+    }   
+    .nav__serach__bar > input {
+        font-size: 3rem;
+    }
+    .nav__back__btn {
+        font-size: 42px;
+    }
+    .profile__title {
+        gap: 32.3rem;
+    }
+    .status__image > img {
+        width: 43%;
+    }
+    .status__add {
+        margin: -61px 0 0 84px;
+        font-size: 2.8rem;
+        width: 6%;
+        padding: 2px 2px 2px 8px;
+        border: 5px solid var(--bg-color);
+    }
+    .status__text__container {
+        margin: 26px 0 0 -152px;
+    }
+    .status__title {
+        font-size: 3rem;
+    }
+    .status__subtitle {
+        font-size: 2.7rem;
+    }
+    .profile__subtitle {
+        font-size: 2rem;
+    }
+    .profile__time {
+        font-size: 27px;
+    }
+    .camera__pic > img {
+        width: 11.99rem;
+    }
+    .camera__tap > img {
+        width: 12rem;
+    }
+    .camera__flash > img {
+        width: 3.9rem;
+        margin: 3.3rem 0 0 2rem;
+    }
+    .camera__button > img {
+        width: 3.9rem;
+        margin: 3.3rem 2rem 0 0;
+    }
+    .camera__instruction {
+        font-size: 3.1rem;
+        padding: 1.5rem;
+    }
+    .camera__up {
+        margin: 35.4rem 0 0 30rem;
+        font-size: 2.6rem;
+    }
+}

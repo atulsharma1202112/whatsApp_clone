@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- Title -->
+    <title>WhatsApp</title>
+</head>
+<body>
+    
+  <!-- <header>
+    <nav>
+      <div class="navbar__primary">
+        <h1>Scroll Down</h1>
+        <p>Scroll down to see the sticky effect.</p>
+      </div>
+      
+      <div class="navbar__secondary" id="navbar__secondary">
+        <h2>My Header</h2>
+      </div>
+    </nav>
+  </header> -->
+  
+  <!-- Header Section -->
+  <header class="header">
+
+    <!-- Navbar -->
+    <nav class="nav">
+
+      <div class="nav__main" id="nav__main">
+        <!-- First Navbar -->
+        <div class="nav__primary">
+            <div class="nav__primary__logo">WhatsApp</div>
+            <div class="nav__primary__search__more">
+                <div class="nav__primary__search">
+
+                  <!-- Trigger/Open The Search -->
+                    <button onclick="showSearch()" class="nav__search__btn">
+                      <i class="far fa-search"></i>
+                    </button>
+                </div>
+                <div class="nav__primary__more">
+
+                  <!-- Trigger/Open The Modal -->
+                    <button id="nav__modal__btn" class="nav__modal__btn">
+                      <i class="far fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <!-- <span class="close">&times;</span> -->
+            <p>New group</p>
+            <p>New broadcast</p>
+            <p>Linked devices</p>
+            <p>Starred messages</p>
+            <p>Payments</p>
+            <p>Settings</p>
+          </div>
+
+        </div>
+
+        <!-- Second Navbar -->
+        <div class="nav__secondary" id="nav__secondary">
+            <a href="#tab-1" onclick="addActiveClass_01()">
+              <div class="nav__secondary__camera" id="show__camera">
+                <i class="fas fa-camera"></i>
+              </div>
+            </a>
+            <a href="#tab-2" onclick="addActiveClass_02()">
+              <div class="nav__secondary__chat active" id="show__chat">
+                CHATS
+              </div>    
+            </a>
+            <a href="#tab-3" onclick="addActiveClass_03()">
+              <div class="nav__secondary__status" id="show__status">
+                STATUS
+              </div>
+            </a>
+            <a href="#tab-4" onclick="addActiveClass_04()">
+              <div class="nav__secondary__calls" id="show__calls">
+                CALLS
+              </div>
+            </a>
+        </div>
+      </div>
+
+      <div class="nav__search__main nav__hidden" id="nav__search__main">
+
+          <div class="nav__search__primary">
+            <div class="nav__search__back">
+              <button onclick="showHome()" class="nav__back__btn">
+                <i class="far fa-arrow-left"></i>
+              </button>
+            </div>
+            <div class="nav__serach__bar">
+              <input type="text" name="search" id="search" placeholder="Search..." />
+            </div>
+          </div>
+
+          <div class="nav__search__secondary">
+            <div class="nav__search__secondary__row">
+              <div class="nav__search__secondary__photos">
+                <i class="fas fa-image"></i> <span>Photos</span> 
+              </div>
+              <div class="nav__search__secondary__videos">
+                <i class="fas fa-video"></i> Videos
+              </div>
+              <div class="nav__search__secondary__links">
+                <i class="fas fa-link"></i> Links
+              </div>
+            </div>
+            <div class="nav__search__secondary__row">
+              <div class="nav__search__secondary__gifs">
+                <img src="svg/gif.svg" alt="gif image"> GIFs
+              </div>
+              <div class="nav__search__secondary__audio">
+                <i class="fas fa-headphones"></i> Audio
+              </div>
+              <div class="nav__search__secondary__documents">
+                <i class="fas fa-file-alt"></i> Documents
+              </div>
+            </div>
+          </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <section>
+      <div class="tab">
+        <div id="tab-1" class="tab-content">tab 1 content</div>
+        <div id="tab-2" class="tab-content">tab 2 content</div>
+        <div id="tab-3" class="tab-content">tab 3 content</div>
+        <div id="tab-4" class="tab-content">tab 4 content</div>
+      </div>
+    </div>
+    </section>
+  </main>
+  
+  <script src="index.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script>
+
+    // Show Camera Content
+    $(function(){
+      $("#tab-1").load("camera.html");
+    });
+
+    // Show Chat Content
+    $(function(){
+      $("#tab-2").load("chats.html");
+    });
+
+    // Show Status Content
+    $(function(){
+      $("#tab-3").load("status.html");
+    });
+
+    // Show Calls Content
+    $(function(){
+      $("#tab-4").load("calls.html");
+    });
+
+    // Switching Tabs
+    $(document).ready(function(){
+
+    $('a').click(function(event) {
+      event.preventDefault();
+      
+      // display only active tab content
+      var activeTab = $(this).attr("href");
+      $('.tab-content').not(activeTab).css("display","none");
+      $(activeTab).fadeIn();
+      
+      });
+    });
+  </script>
+</body>
+</html>
